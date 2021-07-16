@@ -13,17 +13,28 @@
 // Для добавления стилей, используй CSS-классы valid и invalid
 
 const inputElement = document.querySelector('#validation-input');
+// console.log(inputElement);
+const inputElLength = Number(inputElement.getAttribute('data-length'))
+// console.log(inputElLength);
+
+
 
 inputElement.addEventListener('blur', onInputBlur);
+inputElement.addEventListener('focus', onInputFocus);
 
 function onInputBlur(event)  {
-    inputElement.value.length === 6
+    inputElement.value.length === inputElLength
         ? inputElement.classList.add('valid')
         : inputElement.classList.add('invalid');
 };
 
+function onInputFocus(event) {
+    inputElement.classList.remove('valid', 'invalid');
+}
+
+
 // inputElement.addEventListener('blur', event => {
-//     inputElement.value.length === 6
+//     inputElement.value.length === inputElLength
 //         ? inputElement.classList.add('valid')
 //         : inputElement.classList.add('invalid');
 // }); ??????
