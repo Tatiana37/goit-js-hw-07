@@ -35,20 +35,27 @@ const refs = {
 // console.log(refs.clearButton);
 // console.log(refs.boxes);
 
-const randomColor = () => {
-    const r = Math.round(Math.random() * (255 - 1) + 1);
-    const g = Math.round(Math.random() * (255 - 1) + 1);
-    const b = Math.round(Math.random() * (255 - 1) + 1);
-    return `rgb(${r},${g},${b})`;
+// function randomColor()  {
+//     const r = Math.round(Math.random() * (255 - 1) + 1);
+//     const g = Math.round(Math.random() * (255 - 1) + 1);
+//     const b = Math.round(Math.random() * (255 - 1) + 1);
+//     return `rgb(${r},${g},${b})`;
+// };
+// const color = randomColor();
+// console.log(color);
+
+function createRandomColor() {
+  return `rgb(${(Math.random() * 255) << 0}, ${(Math.random() * 255) << 0}, ${
+    (Math.random() * 255) << 0
+  })`;
 };
-const color = randomColor();
-console.log(color);
+
 function createBoxes(amount) {
     const newDiv = [];
     for (let i = 0; i < amount; i += 1){
         const size = 30 + i * 10;
         const divEl = document.createElement('div');
-        divEl.style.backgroundColor = color; // (`rgba: ${color}, ${color}, ${color}`)
+        divEl.style.background = createRandomColor(); 
         divEl.style.width = `${size}px`;
         divEl.style.height = `${size}px`;
         newDiv.push(divEl);
