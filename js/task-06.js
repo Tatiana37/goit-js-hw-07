@@ -14,7 +14,9 @@
 
 const inputElement = document.querySelector('#validation-input');
 // console.log(inputElement);
-const inputElLength = Number(inputElement.getAttribute('data-length'))
+
+const inputElLength = Number(inputElement.getAttribute('data-length'));
+
 // console.log(inputElLength);
 
 
