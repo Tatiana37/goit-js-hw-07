@@ -48,7 +48,7 @@ function createBoxes(amount) {
     for (let i = 0; i < amount; i += 1){
         const size = 30 + i * 10;
         const divEl = document.createElement('div');
-        divEl.style.backgroundColor = color;
+        divEl.style.backgroundColor = color; // (`rgba: ${color}, ${color}, ${color}`)
         divEl.style.width = `${size}px`;
         divEl.style.height = `${size}px`;
         newDiv.push(divEl);
